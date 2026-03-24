@@ -1,0 +1,17 @@
+---
+description: "Repository conventions and defaults for {{PROJECT_NAME}}"
+globs:
+alwaysApply: true
+---
+
+# Repo Defaults
+
+{{#IF_MONOREPO}}
+- This repo is a `{{PACKAGE_MANAGER}}` workspace monorepo.
+- Unless explicitly requested, work in `{{PRIMARY_APP_DIR}}` rather than other apps.
+{{/IF_MONOREPO}}
+- Prefer project-specific facts from the repo over generic framework advice.
+- Do not create or update docs unless the user asked for docs or the task explicitly includes documentation work.
+- Exception: allow docs/rules/skills updates when the task explicitly requires contract alignment or knowledge-sync remediation.
+- Do not start local dev servers automatically for verification; the user starts them when needed.
+- Keep rules short, current, and scoped.

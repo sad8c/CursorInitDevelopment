@@ -1,0 +1,13 @@
+---
+description: "Testing policy for {{PROJECT_NAME}}"
+globs: "{{LANGUAGE_GLOBS}}"
+alwaysApply: false
+---
+
+# Testing Policy
+
+- Follow the `testing-policy` skill for coverage decisions, mocking patterns, and testability guidance.
+- Do not add tests for trivial getters/setters or framework boilerplate.
+- Refactor for testability first: extract business logic from handlers/controllers before adding broad coverage.
+- Prefer focused seam-level tests over heavy integration tests.
+- Keep test data in fixtures or factory functions, not inline in test bodies.

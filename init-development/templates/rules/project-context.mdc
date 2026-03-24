@@ -1,0 +1,12 @@
+---
+description: "Product context and domain vocabulary for {{PROJECT_NAME}}"
+globs:
+alwaysApply: true
+---
+
+# Product Context
+
+- {{PROJECT_DESCRIPTION}}
+- Use the current project stack and architecture, not generic framework boilerplate.
+
+{{DOMAIN_TERMS_BLOCK}}

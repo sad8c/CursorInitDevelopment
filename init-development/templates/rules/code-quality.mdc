@@ -1,0 +1,41 @@
+---
+description: "Code quality standards for {{PROJECT_NAME}}"
+globs: "{{LANGUAGE_GLOBS}}"
+alwaysApply: false
+---
+
+# Code Quality
+
+{{#IF_TYPESCRIPT}}
+- No `any` types. Use `unknown` + type guards or proper generics.
+- Explicit return types on exported functions and public methods.
+- Use Zod or similar for runtime validation of external inputs.
+- Prefer `const` assertions and discriminated unions over loose string types.
+- No default exports except for framework conventions (page components, route handlers).
+- Handle errors explicitly; no swallowed catches without logging.
+{{/IF_TYPESCRIPT}}
+
+{{#IF_PYTHON}}
+- Type hints on all function signatures (parameters and return types).
+- Use `mypy --strict` compatible patterns.
+- Use Pydantic or dataclasses for structured data, not raw dicts.
+- Explicit error handling; no bare `except:` clauses.
+- Use `pathlib.Path` over string path manipulation.
+- Prefer f-strings over `.format()` or `%` formatting.
+{{/IF_PYTHON}}
+
+{{#IF_GO}}
+- Always check and handle errors explicitly; no `_ = err`.
+- Use structured logging (slog or zerolog) over fmt.Printf.
+- Keep interfaces small and declare them where they are consumed.
+- Use context.Context for cancellation and deadline propagation.
+- Table-driven tests for functions with multiple cases.
+{{/IF_GO}}
+
+{{#IF_RUST}}
+- Prefer `Result<T, E>` over panics for recoverable errors.
+- Use `thiserror` for library errors and `anyhow` for application errors.
+- Derive `Debug`, `Clone`, `PartialEq` where appropriate.
+- Keep `unsafe` blocks minimal and document invariants.
+- Use `clippy` warnings as errors in CI.
+{{/IF_RUST}}
