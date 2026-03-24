@@ -7,6 +7,10 @@ description: Bootstrap a complete Cursor development workflow (skills, agents, c
 
 This skill sets up a full Cursor development workflow in the current project. It creates skills, agents, commands, rules, and documentation scaffolding adapted to the project's technology stack.
 
+## Location
+
+This skill is installed into the target project's workspace at `.cursor/skills/init-development/`. All generated artifacts (skills, agents, commands, rules, docs) are written into the same workspace under `.cursor/`. Nothing is installed globally.
+
 ## Activation
 
 Run when the user asks to initialize, bootstrap, or set up the development workflow. Typical prompts:
